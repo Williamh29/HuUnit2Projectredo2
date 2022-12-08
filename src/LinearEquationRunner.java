@@ -5,6 +5,7 @@ public class LinearEquationRunner {
         System.out.println("Welcome");
         System.out.print("Enter coordinate 1:");
         String coordinate1 = scan.nextLine();
+        int firstNum = coordinate1.length();
         int comma = coordinate1.indexOf(",");
         String x1 = coordinate1.substring(1, comma);
         int x1int = Integer.parseInt(x1);
@@ -21,26 +22,35 @@ public class LinearEquationRunner {
 
 
 
-
         if (x1int == x2int) {
+            System.out.println("Vertical line, x = " + x1int);
+            System.out.println("Please choose a different x coordinate.");
             // if the user enters two points that would create a vertical line,
             // (5, 7) and (5, 10), then print "vertical line, x = 5" and end the program
         } else {
             // create our LinearEquation object with x1, y1, x2, y2, which were parsed from the user's input
             // object is named equation
             LinearEquation equation = new LinearEquation(x1int, y1int, x2int, y2int);
+            System.out.println("");
+            System.out.println("----- Line Info -----");
 
 
             System.out.println(equation.lineInfo());
 
+            System.out.println();
 
             // ask user to enter an X
+            System.out.println("Enter an X value");
+            int xValue = scan.nextInt();
+
 
             // they enter an x value
+            System.out.println("Coordinate for x: " + equation.coordinateForX(xValue));
 
             // call the coordinateforx  method and print the returned string
         }
 
         // end of your program
+
     }
 }
