@@ -9,7 +9,7 @@ public class LinearEquationRunner {
         int comma = coordinate1.indexOf(",");
         String x1 = coordinate1.substring(1, comma);
         int x1int = Integer.parseInt(x1);
-        String y1 = coordinate1.substring(comma + 1, coordinate1.indexOf(")"));
+        String y1 = coordinate1.substring(comma + 2, coordinate1.indexOf(")"));
         int y1int = Integer.parseInt(y1);
 
         // SECOND COORDINATE
@@ -17,10 +17,8 @@ public class LinearEquationRunner {
         String coordinate2 = scan.nextLine();
         String x2 = coordinate2.substring(1, comma);
         int x2int = Integer.parseInt(x2);
-        String y2 = coordinate2.substring(comma + 1, coordinate1.indexOf(")"));
+        String y2 = coordinate2.substring(comma + 2, coordinate2.indexOf(")"));
         int y2int = Integer.parseInt(y2);
-
-
 
         if (x1int == x2int) {
             System.out.println("Vertical line, x = " + x1int);
